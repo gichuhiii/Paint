@@ -1,6 +1,7 @@
 package com.example.paint
 
 import android.content.Context
+import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.graphics.Path
@@ -62,6 +63,14 @@ class PaintView  : View{
         return false;
         }
 
+    override fun onDraw(canvas: Canvas) {
+
+        for (i in pathList.indices){
+            paintBrush.setColor(colorList[1])
+            canvas.drawPath(pathList[i], paintBrush)
+            invalidate()
+        }
+    }
 
 
 
