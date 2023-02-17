@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //hides action bar
         supportActionBar?.hide()
 
         val redBtn = findViewById<ImageButton>(R.id.redColor)

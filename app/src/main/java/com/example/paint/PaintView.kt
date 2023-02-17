@@ -37,7 +37,7 @@ class PaintView  : View{
         paintBrush.color = currentBrush
         paintBrush.style = Paint.Style.STROKE
         paintBrush.strokeJoin = Paint.Join.ROUND
-        paintBrush.strokeWidth = 0f;
+        paintBrush.strokeWidth = 8f;
 
         params = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
 
@@ -47,11 +47,13 @@ class PaintView  : View{
         var x = event.x
         var y = event.y
 
+        //path
         when(event.action) {
             MotionEvent.ACTION_DOWN -> {
                 path.moveTo(x, y)
                 return true
             }
+            //to make line
             MotionEvent.ACTION_MOVE -> {
                 path.lineTo(x, y)
                 pathList.add(path)
